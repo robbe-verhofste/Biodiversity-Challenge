@@ -56,13 +56,15 @@ function buildMetadata(sample) {
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
-  d3.json("samples.json").then((data) => {
+  d3.json("static/data/samples.json").then((data) => {
     // 3. Create a variable that holds the samples array. 
-    var samples = data.samples;
+    var samplesArray = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
+    var resultsarray = samplesArray.filter(sampleobject => sampleobject.id == sample);
     //  5. Create a variable that holds the first sample in the array.
-    var resultsarray=samples.filter(sampleobject => sampleobject.id ==sample);
     var result = resultsarray[0];
+    // 5a. Create a variable that holds the washing frequency.
+    var washFrequency = parseFloat(metaResult.wfreq)
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otuIDs = result.otu_ids;
@@ -125,12 +127,14 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
-   
+
+   //DELIVERABLE 3: Gauge Chart for washing frequency
+
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
       type: "indicator",
       mode: "gauge+number",
-      value: frequency,
+      value: washFrequency,
       title: {text: "Belly Button Washing Frequency</b><br>Scrubs per Week"},
       gauge: {
         axis: {range: [0,10]},
