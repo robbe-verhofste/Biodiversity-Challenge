@@ -96,6 +96,7 @@ function buildCharts(sample) {
         bordercolor: 'grey'
       }
     };
+    var barData = [barTrace];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "TOP 10 MICROBIAL CULTURES IDENTIFIED IN STUDY",
