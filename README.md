@@ -28,3 +28,5 @@ Additionally, we learned the following:
     Deploy an interactive chart to GitHub Pages.
 
 ## Outputs:
+
+Follow this link in your web browser to view the dashboard: robbe-verhofste.github.io
