@@ -29,4 +29,4 @@ Additionally, we learned the following:
 
 ## Outputs:
 
-Follow this link in your web browser to view the dashboard: robbe-verhofste.github.io
+Follow this link in your web browser to view the dashboard: https://robbe-verhofste.github.io/Biodiversity-Challenge/
