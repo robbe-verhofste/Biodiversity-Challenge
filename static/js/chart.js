@@ -58,14 +58,15 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("static/js/samples.json").then((data) => {
+
     // 3. Create a variable that holds the samples array. 
     var samplesArray = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    var resultsarray = samplesArray.filter(sampleobject => sampleobject.id == sample);
+    var resultsarray = samplesArray.filter(sampleObject => sampleObject.id == sample);
     // 4. Create a variable that filters the metadata array for the object with the desired sample number.
     var metaArray = data.metadata;
-    var metaObjResult = metArray.filter(metaObj => metaObj.id == sample);
-    
+    var metaObjResult = metaArray.filter(metaObj => metaObj.id == sample);
+
     //  5. Create a variable that holds the first sample in the array.
     var result = resultsarray[0];
     //  5a. Create a variable that holds the first sample in the metadata array.
